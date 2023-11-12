@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
+import Send from '@mui/icons-material/Send';
+import { IconButton } from '@mui/material';
 
 interface InputFormProps {
     onAddId: (id: string) => void;
@@ -23,14 +25,14 @@ const InputForm: React.FC<InputFormProps> = ({ onAddId }) => {
         <Box sx={{ p: 2 }}>
             <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
                 <TextField
-                    label="Enter ID"
+                    label="Ingresar numero de orden"
                     value={id}
                     onChange={handleInputChange}
                     sx={{ flexGrow: 1 }}
                 />
-                <Button variant="contained" onClick={handleAddId} sx={{ ml: 2 }}>
-                    Add
-                </Button>
+                <IconButton onClick={handleAddId} sx={{ ml: 1, borderRadius: '50%' }}>
+                    <Send />
+                </IconButton>
             </Box>
         </Box>
     );
