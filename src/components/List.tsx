@@ -8,7 +8,7 @@ interface IdListProps {
 
 const IdList: React.FC<IdListProps> = ({ ids }) => {
     const [page, setPage] = useState(0);
-    const rowsPerPage = 15
+    const rowsPerPage = 8;
 
     const handleChangePage = (
         event: React.MouseEvent<HTMLButtonElement> | null,
@@ -19,8 +19,14 @@ const IdList: React.FC<IdListProps> = ({ ids }) => {
 
     const startIndex = page * rowsPerPage;
     const endIndex = startIndex + rowsPerPage;
-    const slicedIds = ids.slice(startIndex, endIndex);
+    let slicedIds = ids.slice(startIndex, endIndex);
 
+    if (slicedIds.length < 5) {
+        const emptyRows = new Array(5 - slicedIds.length).fill(null);
+        slicedIds = slicedIds.concat(emptyRows);
+    }
+
+    const ordersPerPage = 27;
     return (
         <Box sx={{ width: '100%' }}>
             <Paper>
@@ -28,13 +34,15 @@ const IdList: React.FC<IdListProps> = ({ ids }) => {
                     <Table>
                         <TableHead>
                             <TableRow>
-                                <TableCell>Id</TableCell>
+                                <TableCell>Nro Orden</TableCell>
+                                <TableCell>Pagina Padron</TableCell>
                             </TableRow>
                         </TableHead>
                         <TableBody>
                             {slicedIds.map((id, index) => (
                                 <TableRow key={index}>
                                     <TableCell>{id}</TableCell>
+                                    <TableCell>{id ? Math.ceil(Number(id)/ordersPerPage) : null}</TableCell>
                                 </TableRow>
                             ))}
                         </TableBody>
