@@ -1,16 +1,23 @@
 import React from 'react';
-import { Box, CircularProgress, CircularProgressProps, Typography } from '@mui/material';
+import { Box, CircularProgress, Typography } from '@mui/material';
 
 interface TotalCountProps {
         ids: string[];
 }
 
 function CircularProgressWithLabel(
-    props: CircularProgressProps & { value: number },
+    props: { value: number },
 ) {
+    const size = 50,
+      thickness = 9,
+      secColor = '#d1d1d1';
+    const progressSx = {
+        borderRadius: '50%',
+        boxShadow: `inset 0 0 0 ${thickness/44*size}px ${secColor}`,
+    };
     return (
         <Box sx={{ position: 'relative', display: 'inline-flex' }}>
-            <CircularProgress variant="determinate" size={100} sx={{color: 'green'}} {...props} />
+            <CircularProgress variant='determinate' size={size} thickness={thickness} value={props.value} sx={progressSx} />
             <Box
                 sx={{
                     top: 0,
@@ -37,8 +44,9 @@ const TotalCount: React.FC<TotalCountProps> = ({ ids }) => {
     const percentage = Math.floor((ids.length / 350) * 100);
 
     return (
-            <div style={{ position: 'relative', display: 'inline-block' }}>
-                    <CircularProgressWithLabel value={percentage} />
+            <div style={{ display: 'flex', alignItems: 'center' }}>
+                <CircularProgressWithLabel value={percentage} />
+                <Typography variant="caption" component="div" color="text.secondary" ml={1}>{`${ids.length}/350`}</Typography>
             </div>
     );
 };
