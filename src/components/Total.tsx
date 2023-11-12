@@ -41,12 +41,13 @@ function CircularProgressWithLabel(
 }
 
 const TotalCount: React.FC<TotalCountProps> = ({ ids }) => {
-    const percentage = Math.floor((ids.length / 350) * 100);
+    const total = 350;
+    const percentage = Math.floor((ids.length / total) * 100);
 
     return (
         <div style={{ display: 'flex', alignItems: 'center' }}>
             <CircularProgressWithLabel value={percentage} />
-            <Typography variant="caption" component="div" color="text.secondary" ml={1}>{`${ids.length}/350`}</Typography>
+            <Typography variant="caption" component="div" color="text.secondary" ml={1}>{`${ids.length}/${total}`}</Typography>
         </div>
     );
 };

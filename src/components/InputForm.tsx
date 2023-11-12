@@ -25,7 +25,7 @@ const InputForm: React.FC<InputFormProps> = ({ onAddId }) => {
         <Box sx={{ p: 2 }}>
             <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
                 <TextField
-                    label="Ingresar numero de orden"
+                    label="Ingrese numero de orden"
                     value={id}
                     onChange={handleInputChange}
                     sx={{ flexGrow: 1 }}
