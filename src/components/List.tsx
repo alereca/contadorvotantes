@@ -55,6 +55,7 @@ const IdList: React.FC<IdListProps> = ({ ids }) => {
                     rowsPerPage={rowsPerPage}
                     page={page}
                     onPageChange={handleChangePage}
+                    labelDisplayedRows={({ from, to, count }) => `${from}-${to} de ${count}`}
                 />
             </Paper>
         </Box>
