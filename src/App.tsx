@@ -23,7 +23,9 @@ const App: React.FC = () => {
   return (
     <div>
       <InputForm onAddId={handleAddId} />
-      <TotalCount ids={ids} />
+      <Box ml={2} mb={1}>
+        <TotalCount ids={ids} />
+      </Box>
       <Box display="flex" justifyContent="center" alignItems="center">
         <IdList ids={ids} />
       </Box>
