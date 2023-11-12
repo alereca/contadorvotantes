@@ -1,7 +1,10 @@
 // src/components/App.tsx
 import React, { useEffect, useState } from 'react';
+
 import InputForm from './components/InputForm';
+import TotalCount from './components/Total';
 import IdList from './components/List';
+import { Box } from '@mui/material';
 
 const App: React.FC = () => {
   // Load IDs from localStorage on initial render
@@ -14,13 +17,16 @@ const App: React.FC = () => {
   }, [ids]);
 
   const handleAddId = (id: string) => {
-    setIds((prevIds) => [...prevIds, id]);
+    setIds((prevIds) => [id, ...prevIds]);
   };
 
   return (
     <div>
       <InputForm onAddId={handleAddId} />
-      <IdList ids={ids} />
+      <TotalCount ids={ids} />
+      <Box display="flex" justifyContent="center" alignItems="center">
+        <IdList ids={ids} />
+      </Box>
     </div>
   );
 };

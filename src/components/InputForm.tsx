@@ -1,36 +1,39 @@
-// src/components/InputForm.tsx
 import React, { useState } from 'react';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
+import Box from '@mui/material/Box';
 
 interface InputFormProps {
-  onAddId: (id: string) => void;
+    onAddId: (id: string) => void;
 }
 
 const InputForm: React.FC<InputFormProps> = ({ onAddId }) => {
-  const [id, setId] = useState<string>('');
+    const [id, setId] = useState<string>('');
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setId(e.target.value);
-  };
+    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setId(e.target.value);
+    };
 
-  const handleAddId = () => {
-    onAddId(id);
-    setId('');
-  };
+    const handleAddId = () => {
+        onAddId(id);
+        setId('');
+    };
 
-  return (
-    <div>
-      <TextField
-        label="Enter ID"
-        value={id}
-        onChange={handleInputChange}
-      />
-      <Button variant="contained" onClick={handleAddId}>
-        Add
-      </Button>
-    </div>
-  );
+    return (
+        <Box sx={{ p: 2 }}>
+            <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
+                <TextField
+                    label="Enter ID"
+                    value={id}
+                    onChange={handleInputChange}
+                    sx={{ flexGrow: 1 }}
+                />
+                <Button variant="contained" onClick={handleAddId} sx={{ ml: 2 }}>
+                    Add
+                </Button>
+            </Box>
+        </Box>
+    );
 };
 
 export default InputForm;
