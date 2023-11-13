@@ -47,7 +47,9 @@ const TotalCount: React.FC<TotalCountProps> = ({ ids }) => {
     return (
         <div style={{ display: 'flex', alignItems: 'center' }}>
             <CircularProgressWithLabel value={percentage} />
-            <Typography variant="caption" component="div" color="text.secondary" ml={1}>{`${ids.length}/${total}`}</Typography>
+            <Typography variant="caption" component="div" color="text.secondary" ml={1}>
+                {`Votaron ${ids.length} de ${total} registrados`}
+            </Typography>
         </div>
     );
 };
