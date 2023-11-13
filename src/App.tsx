@@ -20,6 +20,10 @@ const App: React.FC = () => {
     setIds((prevIds) => [id, ...prevIds]);
   };
 
+  const handleDeleteId = (id: string) => {
+    setIds((prevIds) => prevIds.filter((prevId) => prevId !== id));
+  };
+
   return (
     <div>
       <InputForm onAddId={handleAddId} />
@@ -27,7 +31,7 @@ const App: React.FC = () => {
         <TotalCount ids={ids} />
       </Box>
       <Box display="flex" justifyContent="center" alignItems="center">
-        <IdList ids={ids} />
+        <IdList ids={ids} onDeleteId={handleDeleteId} />
       </Box>
     </div>
   );

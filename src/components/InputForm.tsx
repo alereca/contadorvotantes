@@ -30,7 +30,7 @@ const InputForm: React.FC<InputFormProps> = ({ onAddId }) => {
                     onChange={handleInputChange}
                     sx={{ flexGrow: 1 }}
                 />
-                <IconButton onClick={handleAddId} sx={{ ml: 1, borderRadius: '50%' }}>
+                <IconButton onClick={handleAddId} sx={{ ml: 1 }}>
                     <Send />
                 </IconButton>
             </Box>
