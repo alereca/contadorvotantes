@@ -7,8 +7,6 @@ import {
   TableHead,
   TableRow,
   Paper,
-  Select,
-  MenuItem,
   TablePagination,
   Box,
   IconButton,
