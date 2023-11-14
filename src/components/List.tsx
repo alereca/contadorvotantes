@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import {
   Table,
   TableBody,
@@ -16,9 +16,9 @@ import {
   DialogContent,
   DialogContentText,
   DialogTitle,
-} from "@mui/material";
-import { useState } from "react";
-import { Delete } from "@mui/icons-material";
+} from '@mui/material';
+import { useState } from 'react';
+import { Delete } from '@mui/icons-material';
 
 interface IdListProps {
   ids: string[];
@@ -43,7 +43,7 @@ const IdList: React.FC<IdListProps> = ({ ids, onDeleteId }) => {
 
   const handleChangePage = (
     event: React.MouseEvent<HTMLButtonElement> | null,
-    newPage: number
+    newPage: number,
   ) => {
     setPage(newPage);
   };
@@ -59,7 +59,7 @@ const IdList: React.FC<IdListProps> = ({ ids, onDeleteId }) => {
 
   const handleConfirmDelete = () => {
     if (selectedId === null) {
-      console.error("selectedId is null");
+      console.error('selectedId is null');
       setOpen(false);
       return;
     }
@@ -69,14 +69,14 @@ const IdList: React.FC<IdListProps> = ({ ids, onDeleteId }) => {
   };
 
   return (
-    <Box sx={{ width: "100%" }}>
+    <Box sx={{ width: '100%' }}>
       <Dialog
         open={open}
         onClose={handleCloseDialog}
         aria-labelledby="alert-dialog-title"
         aria-describedby="alert-dialog-description"
       >
-        <DialogTitle id="alert-dialog-title">{"Confirm Delete"}</DialogTitle>
+        <DialogTitle id="alert-dialog-title">{'Confirm Delete'}</DialogTitle>
         <DialogContent>
           <DialogContentText id="alert-dialog-description">
             Are you sure you want to delete id {selectedId}?
@@ -90,7 +90,7 @@ const IdList: React.FC<IdListProps> = ({ ids, onDeleteId }) => {
         </DialogActions>
       </Dialog>
       <Paper>
-        <TableContainer component={Paper} sx={{ margin: "auto" }}>
+        <TableContainer component={Paper} sx={{ margin: 'auto' }}>
           <Table>
             <TableHead>
               <TableRow>
