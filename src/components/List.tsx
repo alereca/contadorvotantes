@@ -76,16 +76,17 @@ const IdList: React.FC<IdListProps> = ({ ids, onDeleteId }) => {
         aria-labelledby="alert-dialog-title"
         aria-describedby="alert-dialog-description"
       >
-        <DialogTitle id="alert-dialog-title">{'Confirm Delete'}</DialogTitle>
+        <DialogTitle id="alert-dialog-title">{'Confirmar borrado'}</DialogTitle>
         <DialogContent>
           <DialogContentText id="alert-dialog-description">
-            Are you sure you want to delete id {selectedId}?
+            ¿Estás seguro de que deseas eliminar el numero de orden {selectedId}
+            ?
           </DialogContentText>
         </DialogContent>
         <DialogActions>
-          <Button onClick={handleCloseDialog}>Cancel</Button>
+          <Button onClick={handleCloseDialog}>Cancelar</Button>
           <Button onClick={handleConfirmDelete} autoFocus>
-            Delete
+            Borrar
           </Button>
         </DialogActions>
       </Dialog>
