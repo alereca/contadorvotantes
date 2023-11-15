@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "contarvotantes",
+  "name": "Sitio para ayudar en la fiscalizacion previo al conteo de votos (de 8am a 18pm)",
   "icons": [
     {
       "src": "favicon.ico",
