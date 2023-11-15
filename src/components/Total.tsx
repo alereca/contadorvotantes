@@ -3,7 +3,7 @@ import { Typography } from '@mui/material';
 import CircularProgressWithLabel from './CircularProgressWithLabel';
 
 interface TotalCountProps {
-  ids: string[];
+  ids: number[];
   total: number;
 }
 

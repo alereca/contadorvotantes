@@ -9,7 +9,7 @@ import { Box } from '@mui/material';
 const App: React.FC = () => {
   // Load IDs from localStorage on initial render
   const initialIds = JSON.parse(localStorage.getItem('ids') || '[]');
-  const [ids, setIds] = useState<string[]>(initialIds);
+  const [ids, setIds] = useState<number[]>(initialIds);
   const total = 350;
 
   // Update localStorage whenever ids change
@@ -17,11 +17,11 @@ const App: React.FC = () => {
     localStorage.setItem('ids', JSON.stringify(ids));
   }, [ids]);
 
-  const handleAddId = (id: string) => {
+  const handleAddId = (id: number) => {
     setIds((prevIds) => [id, ...prevIds]);
   };
 
-  const handleDeleteId = (id: string) => {
+  const handleDeleteId = (id: number) => {
     setIds((prevIds) => prevIds.filter((prevId) => prevId !== id));
   };
 

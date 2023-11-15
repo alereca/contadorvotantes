@@ -7,12 +7,12 @@ import { Formik, Form, Field } from 'formik';
 import * as Yup from 'yup';
 
 interface InputFormProps {
-  ids: string[];
-  onAddId: (id: string) => void;
+  ids: number[];
+  onAddId: (id: number) => void;
 }
 
 const InputForm: React.FC<InputFormProps> = ({ onAddId, ids }) => {
-  const handleAddId = (id: string) => {
+  const handleAddId = (id: number) => {
     onAddId(id);
   };
 
@@ -26,7 +26,7 @@ const InputForm: React.FC<InputFormProps> = ({ onAddId, ids }) => {
         'unique',
         'Este número de orden ya fue ingresado, busque en la lista y borre el anterior o revise que sucedio',
         function (value) {
-          return value ? !ids.includes(String(value)) : true;
+          return value ? !ids.includes(value) : true;
         },
       ),
   });
@@ -38,7 +38,7 @@ const InputForm: React.FC<InputFormProps> = ({ onAddId, ids }) => {
       onSubmit={(values, { setSubmitting }) => {
         console.log(values);
         if (values.id !== '') {
-          handleAddId(values.id);
+          handleAddId(Number(values.id));
           values.id = '';
         }
         setSubmitting(false);

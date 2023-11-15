@@ -21,14 +21,14 @@ import { useState } from 'react';
 import { Delete } from '@mui/icons-material';
 
 interface IdListProps {
-  ids: string[];
-  onDeleteId: (id: string) => void;
+  ids: number[];
+  onDeleteId: (id: number) => void;
 }
 
 const IdList: React.FC<IdListProps> = ({ ids, onDeleteId }) => {
   const [page, setPage] = useState(0);
   const [open, setOpen] = useState(false);
-  const [selectedId, setSelectedId] = useState<string | null>(null);
+  const [selectedId, setSelectedId] = useState<number | null>(null);
   const rowsPerPage = 8;
   const ordersPerPage = 27;
 
@@ -48,7 +48,7 @@ const IdList: React.FC<IdListProps> = ({ ids, onDeleteId }) => {
     setPage(newPage);
   };
 
-  const handleDeleteId = (id: string) => {
+  const handleDeleteId = (id: number) => {
     setSelectedId(id);
     setOpen(true);
   };
