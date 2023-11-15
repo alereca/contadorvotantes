@@ -10,6 +10,7 @@ const App: React.FC = () => {
   // Load IDs from localStorage on initial render
   const initialIds = JSON.parse(localStorage.getItem('ids') || '[]');
   const [ids, setIds] = useState<string[]>(initialIds);
+  const total = 350;
 
   // Update localStorage whenever ids change
   useEffect(() => {
@@ -28,7 +29,7 @@ const App: React.FC = () => {
     <div>
       <InputForm onAddId={handleAddId} />
       <Box ml={2} mb={1}>
-        <TotalCount ids={ids} />
+        <TotalCount ids={ids} total={total} />
       </Box>
       <Box display="flex" justifyContent="center" alignItems="center">
         <IdList ids={ids} onDeleteId={handleDeleteId} />
