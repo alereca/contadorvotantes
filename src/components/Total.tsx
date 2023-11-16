@@ -19,7 +19,7 @@ const TotalCount: React.FC<TotalCountProps> = ({ ids, total }) => {
         color="text.secondary"
         ml={1}
       >
-        {`Votaron ${ids.length} de ${total} registrados`}
+        {`Votaron ${ids.length} de ${total} electores`}
       </Typography>
     </div>
   );
