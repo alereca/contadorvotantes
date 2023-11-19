@@ -51,8 +51,8 @@ const ConfigurationForm: React.FC<ConfigurationFormProps> = ({
               <Button 
                 type="button"
                 onClick={() => setShowConfig(false)}
-                color="error">
-                
+                color="error"
+              >
                 Volver
               </Button>
               <Button type="submit" disabled={isSubmitting}>
