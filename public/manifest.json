@@ -1,6 +1,6 @@
 {
   "short_name": "contarvotantes",
-  "name": "Web app para ayudar en la fiscalizacion previo al conteo de votos (de 8am a 18pm)",
+  "name": "Web app para ayudar en la fiscalizacion previo al conteo de votos (de 8am a 6pmm)",
   "icons": [
     {
       "src": "favicon.ico",
