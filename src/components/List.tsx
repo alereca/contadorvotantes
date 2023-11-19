@@ -30,7 +30,7 @@ const IdList: React.FC<IdListProps> = ({ ids, onDeleteId }) => {
   const [open, setOpen] = useState(false);
   const [selectedId, setSelectedId] = useState<number | null>(null);
   const rowsPerPage = 8;
-  const ordersPerPage = 27;
+  const ordersPerPage = 32;
 
   const startIndex = page * rowsPerPage;
   const endIndex = startIndex + rowsPerPage;
