@@ -48,7 +48,9 @@ const ConfigurationForm: React.FC<ConfigurationFormProps> = ({
                 marginTop: 2,
               }}
             >
-              <Button type="button" onClick={() => setShowConfig(false)} color="error">
+              <Button type="button"
+                onClick={() => setShowConfig(false)}
+                color="error">
                 Volver
               </Button>
               <Button type="submit" disabled={isSubmitting}>
