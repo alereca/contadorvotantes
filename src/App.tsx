@@ -69,7 +69,10 @@ const App: React.FC = () => {
         </Toolbar>
       </AppBar>
       {showConfig ? (
-        <ConfigurationForm onTotalChange={onTotalChange} />
+        <ConfigurationForm
+          onTotalChange={onTotalChange}
+          setShowConfig={setShowConfig}
+        />
       ) : (
         <Box>
           <InputForm ids={ids} onAddId={handleAddId} />
