@@ -48,8 +48,8 @@ const ConfigurationForm: React.FC<ConfigurationFormProps> = ({
                 marginTop: 2,
               }}
             >
-
-              <Button type="button"
+              <Button 
+                type="button"
                 onClick={() => setShowConfig(false)}
                 color="error">
                 Volver
